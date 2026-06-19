@@ -1,10 +1,15 @@
 {
   "functions": {
     "api/**/*.js": {
-      "maxDuration": 15
+      "maxDuration": 60,
+      "includeFiles": "rules/**"
     }
   },
   "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/"
+    },
     {
       "source": "/health",
       "destination": "/api/health"

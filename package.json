@@ -1,6 +1,6 @@
 {
   "name": "safeyou",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "Firefox phishing protection extension and Vercel-compatible reputation API",
@@ -13,6 +13,7 @@
     "node": ">=20"
   },
   "dependencies": {
+    "@litko/yara-x": "^0.6.1",
     "dotenv": "^16.6.1",
     "mongodb": "^6.17.0",
     "tldts": "^7.0.8"

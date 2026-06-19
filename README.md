@@ -48,6 +48,9 @@ Import this directory as a Vercel project and add these environment variables:
 - `MONGODB_URI`
 - `MONGODB_DB` (optional, defaults to `safeyou`)
 - `SCAN_TIMEOUT_MS` (optional)
+- `URLSCAN_API_KEY` (recommended for urlscan.io submission and higher quotas)
+- `URLSCAN_VISIBILITY` (recommended: `unlisted` or `private`)
+- `URLSCAN_WAIT_MS` (optional result polling budget)
 
 The API routes are:
 
@@ -72,7 +75,17 @@ Protected admin routes:
 
 The server first uses a cached database result. New or stale URLs are fetched
 with private-network protections and assessed using explainable URL and HTML
-signals. This is heuristic detection, not proof that a website is safe. For a
-production security product, add commercial threat-intelligence feeds,
-authentication, durable rate limiting, abuse controls, privacy disclosures,
-retention limits, and independent security testing.
+signals. The response body is scanned with YARA-X using the rules in
+`rules/web-threats.yar`. The backend also follows the search, submit, and result
+workflow exposed by urlscan.io (the same service wrapped by
+`hrbrmstr/urlscan`). Without `URLSCAN_API_KEY`, SafeYou can search public recent
+results but does not submit new scans.
+
+URL submission can disclose the complete address to urlscan.io. Keep
+`URLSCAN_VISIBILITY=unlisted` or use `private` when your urlscan.io plan supports
+it, and avoid submitting URLs containing personal information or secret query
+parameters.
+
+These signals are heuristic evidence, not proof that a website is safe. A
+production security product also needs durable rate limiting, abuse controls,
+privacy disclosures, retention limits, and independent security testing.
