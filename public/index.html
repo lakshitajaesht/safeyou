@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SafeYou Admin</title>
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+  <main>
+    <section id="login-view" class="login-shell">
+      <form id="login-form" class="login-card">
+        <div class="shield">S</div>
+        <p class="eyebrow">SafeYou administration</p>
+        <h1>Website intelligence</h1>
+        <p class="subtle">Sign in to view scanned websites, scores, verdicts, and community reports.</p>
+        <label for="password">Admin password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button class="primary" type="submit">Sign in</button>
+        <p id="login-error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="dashboard-view" class="dashboard" hidden>
+      <header>
+        <div class="brand">
+          <span class="small-shield">S</span>
+          <div><strong>SafeYou</strong><span>Website intelligence</span></div>
+        </div>
+        <button id="logout" class="secondary" type="button">Log out</button>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Reputation database</p>
+          <h1>Scanned websites</h1>
+          <p id="summary" class="subtle">Loading website records…</p>
+        </div>
+        <form id="search-form" class="search">
+          <input id="search" type="search" placeholder="Search URL, owner, title or verdict">
+          <button class="primary" type="submit">Search</button>
+        </form>
+      </section>
+
+      <section class="table-card">
+        <div id="loading" class="empty">Loading…</div>
+        <div class="table-scroll">
+          <table id="sites-table" hidden>
+            <thead>
+              <tr>
+                <th>Website</th>
+                <th>Verdict</th>
+                <th>Risk</th>
+                <th>Confidence</th>
+                <th>Reports</th>
+                <th>Last checked</th>
+              </tr>
+            </thead>
+            <tbody id="sites-body"></tbody>
+          </table>
+        </div>
+        <div id="empty" class="empty" hidden>No website records found.</div>
+        <footer class="pagination">
+          <button id="previous" class="secondary" type="button">Previous</button>
+          <span id="page-label"></span>
+          <button id="next" class="secondary" type="button">Next</button>
+        </footer>
+      </section>
+    </section>
+  </main>
+  <script src="/admin.js"></script>
+</body>
+</html>

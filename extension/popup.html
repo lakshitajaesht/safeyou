@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SafeYou</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body class="popup">
+  <main>
+    <div class="brand"><span class="mini-shield">S</span><strong>SafeYou</strong></div>
+    <section id="status" class="status neutral-status">No result for this tab.</section>
+    <p id="site" class="host"></p>
+    <div id="meta" class="meta"></div>
+    <div id="actions" class="buttons compact" hidden>
+      <button data-vote="safe" class="safe-button">Safe</button>
+      <button data-vote="malicious" class="bad-button">Malicious</button>
+    </div>
+    <p id="message" class="muted"></p>
+    <button id="options" class="link-button">Backend settings</button>
+  </main>
+
+  <dialog id="backend-dialog">
+    <form id="backend-form">
+      <div class="dialog-heading">
+        <strong>Backend settings</strong>
+        <button id="close-dialog" class="icon-button" type="button" aria-label="Close">✕</button>
+      </div>
+      <label for="backend-url">Backend URL</label>
+      <input id="backend-url" type="url" required placeholder="http://localhost:3000">
+      <p class="muted">Use localhost for development or your HTTPS Vercel URL after deployment.</p>
+      <p id="backend-result" class="connection-result" aria-live="polite"></p>
+      <div class="buttons compact">
+        <button id="test-backend" class="secondary" type="button">Test connection</button>
+        <button class="primary" type="submit">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

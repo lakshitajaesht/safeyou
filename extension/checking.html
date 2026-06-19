@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SafeYou is checking this site</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body class="page neutral">
+  <main class="card center">
+    <div class="shield">S</div>
+    <h1>Checking this website…</h1>
+    <p id="host" class="host"></p>
+    <div class="spinner" aria-label="Checking"></div>
+    <p class="muted">SafeYou is checking reputation and page signals before opening it.</p>
+    <p id="error" class="error" hidden></p>
+    <div id="recovery" class="buttons recovery" hidden>
+      <button id="retry" class="primary" type="button">Retry check</button>
+      <button id="open-anyway" class="secondary" type="button">Open website anyway</button>
+    </div>
+  </main>
+  <script src="shared.js"></script>
+  <script src="checking.js"></script>
+</body>
+</html>

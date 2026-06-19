@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Potential phishing site — SafeYou</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body class="page danger">
+  <main class="card">
+    <div class="danger-icon">!</div>
+    <p class="eyebrow">SafeYou security warning</p>
+    <h1>Potential phishing website</h1>
+    <p>SafeYou found signals associated with deceptive or malicious pages.</p>
+    <p id="target" class="url-box"></p>
+    <div id="details" class="details"></div>
+    <div class="buttons">
+      <button id="back" class="primary">Go back to safety</button>
+      <button id="proceed" class="secondary">Proceed anyway</button>
+    </div>
+    <div class="buttons compact">
+      <button id="report-safe" class="safe-button">Report safe</button>
+      <button id="report-malicious" class="bad-button">Report malicious</button>
+    </div>
+    <p id="message" class="muted"></p>
+  </main>
+  <script src="shared.js"></script>
+  <script src="warning.js"></script>
+</body>
+</html>

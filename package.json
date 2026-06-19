@@ -1,0 +1,20 @@
+{
+  "name": "safeyou",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Firefox phishing protection extension and Vercel-compatible reputation API",
+  "scripts": {
+    "dev": "node --watch server/local-server.js",
+    "start": "node server/local-server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "mongodb": "^6.17.0",
+    "tldts": "^7.0.8"
+  }
+}
