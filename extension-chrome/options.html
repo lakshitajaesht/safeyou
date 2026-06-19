@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SafeYou settings</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body class="page neutral">
+  <main class="card">
+    <div class="brand"><span class="mini-shield">S</span><strong>SafeYou settings</strong></div>
+    <h1>Reputation server</h1>
+    <label for="api">Backend URL</label>
+    <input id="api" type="url" placeholder="http://localhost:3000">
+    <p class="muted">Use localhost while developing. Replace it with your HTTPS Vercel URL after deployment.</p>
+    <button id="save" class="primary">Save settings</button>
+    <p id="message"></p>
+  </main>
+  <script src="compat.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

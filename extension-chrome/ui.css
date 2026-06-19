@@ -1,0 +1,46 @@
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17212b}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0}
+.page{min-height:100vh;display:grid;place-items:center;padding:24px;background:#eef2f5}
+.page.danger{background:linear-gradient(145deg,#9f1717,#450909);color:#fff}
+.card{width:min(620px,100%);padding:38px;border-radius:20px;background:#fff;color:#17212b;box-shadow:0 22px 70px #0002}
+.center{text-align:center}
+h1{margin:8px 0 14px;font-size:32px;line-height:1.12}
+p{line-height:1.55}
+.shield,.mini-shield{display:inline-grid;place-items:center;background:#176b45;color:#fff;font-weight:800}
+.shield{width:62px;height:68px;margin:auto;border-radius:18px 18px 28px 28px;font-size:28px}
+.mini-shield{width:30px;height:34px;border-radius:8px 8px 13px 13px}
+.brand{display:flex;align-items:center;gap:10px;font-size:18px;margin-bottom:25px}
+.host{overflow-wrap:anywhere;font-weight:650}
+.muted{color:#64717d;font-size:13px}
+.error{color:#b42318}
+.spinner{width:38px;height:38px;margin:24px auto;border:4px solid #d8e0e5;border-top-color:#176b45;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.danger-icon{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#d92d20;color:#fff;font-size:38px;font-weight:800}
+.eyebrow{text-transform:uppercase;letter-spacing:.1em;color:#b42318;font-weight:750;font-size:12px}
+.url-box{padding:12px;border-radius:9px;background:#f7e8e7;color:#7a1611;overflow-wrap:anywhere}
+.details{padding:14px 0}.details ul{padding-left:21px}
+.buttons{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+button{font:inherit;font-weight:700;cursor:pointer}
+.primary,.secondary,.safe-button,.bad-button{border:0;border-radius:9px;padding:11px 16px}
+.primary{background:#176b45;color:#fff}.secondary{background:#edf0f2;color:#17212b}
+.link-button{margin-top:15px;padding:4px 0;border:0;background:transparent;color:#356c9a;text-decoration:underline}
+label{display:block;font-weight:700;margin:18px 0 7px}
+input{width:100%;border:1px solid #b8c2ca;border-radius:9px;padding:12px;font:inherit}
+.popup{width:340px;padding:18px;background:#fff}
+.popup main{min-height:190px}
+.status{padding:13px;border-radius:10px;font-weight:800}
+.safe-status{background:#dcf6e7;color:#126b37}.malicious-status{background:#fde2e0;color:#9c1c14}
+.unknown-status{background:#fff0c9;color:#805200}.checking-status,.neutral-status{background:#e9edf0;color:#4c5862}
+.meta{font-size:13px;color:#64717d}
+.compact{margin-top:14px}.compact button{flex:1}
+.safe-button{background:#176b45;color:#fff}.bad-button{background:#c52d23;color:#fff}
+dialog{width:calc(100% - 24px);max-width:320px;border:0;border-radius:14px;padding:20px;color:#17212b;box-shadow:0 18px 55px #0005}
+dialog::backdrop{background:#17212b99}
+.dialog-heading{display:flex;align-items:center;justify-content:space-between;font-size:17px}
+.icon-button{border:0;background:transparent;color:#64717d;padding:4px 6px;font-size:16px}
+.connection-result{min-height:20px;margin:10px 0 0;font-size:12px;font-weight:700}
+.connection-result.success{color:#126b37}.connection-result.failure{color:#b42318}
+button:disabled{cursor:wait;opacity:.65}
+.recovery{justify-content:center}

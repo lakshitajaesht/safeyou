@@ -41,6 +41,15 @@ your hosting setup permits it.
 After deploying, change the setting to the Vercel project URL, such as
 `https://your-project.vercel.app`.
 
+## Load the Chrome extension
+
+1. Run `npm run build:chrome` to create `dist/safeyou-chrome.zip`.
+2. Extract the ZIP, or use the existing `extension-chrome` directory.
+3. Open `chrome://extensions`.
+4. Enable **Developer mode**.
+5. Select **Load unpacked** and choose the `extension-chrome` directory.
+6. Open SafeYou's backend settings and enter the local or deployed API URL.
+
 ## Deploy the API to Vercel
 
 Import this directory as a Vercel project and add these environment variables:

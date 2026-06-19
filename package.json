@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node --watch server/local-server.js",
     "start": "node server/local-server.js",
-    "test": "node --test"
+    "test": "node --test",
+    "build:chrome": "mkdir -p dist && cd extension-chrome && zip -r -FS ../dist/safeyou-chrome.zip . -x '*.DS_Store'"
   },
   "engines": {
     "node": ">=20"

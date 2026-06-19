@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "SafeYou for Chrome",
+  "version": "0.1.0",
+  "description": "Checks opened websites against SafeYou before allowing navigation.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "SafeYou",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["compat.js", "shared.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
