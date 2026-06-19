@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SafeYou",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Checks opened websites against SafeYou before allowing navigation.",
   "permissions": [
     "storage",

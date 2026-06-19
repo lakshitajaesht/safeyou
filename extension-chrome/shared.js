@@ -1,7 +1,7 @@
 const safeYou = {
   async config() {
     const stored = await browser.storage.local.get({
-      apiBaseUrl: "http://localhost:3000"
+      apiBaseUrl: "https://safeyou.vercel.app"
     });
     return { apiBaseUrl: stored.apiBaseUrl.replace(/\/+$/, "") };
   },

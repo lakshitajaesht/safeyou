@@ -3,17 +3,17 @@ const checkingPage = api.runtime.getURL("checking.html");
 const warningPage = api.runtime.getURL("warning.html");
 const approvedTabs = new Map();
 const tabState = new Map();
-let backendOrigin = "http://localhost:3000";
+let backendOrigin = "https://safeyou.vercel.app";
 
 function updateBackendOrigin(value) {
   try {
-    backendOrigin = new URL(value || "http://localhost:3000").origin;
+    backendOrigin = new URL(value || "https://safeyou.vercel.app").origin;
   } catch {
-    backendOrigin = "http://localhost:3000";
+    backendOrigin = "https://safeyou.vercel.app";
   }
 }
 
-api.storage.local.get({ apiBaseUrl: "http://localhost:3000" })
+api.storage.local.get({ apiBaseUrl: "https://safeyou.vercel.app" })
   .then(({ apiBaseUrl }) => updateBackendOrigin(apiBaseUrl));
 
 api.storage.onChanged.addListener((changes, area) => {
@@ -38,6 +38,14 @@ function isTabApproved(tabId) {
 
 function isHttpUrl(url) {
   return /^https?:\/\//i.test(url);
+}
+
+function sameOrigin(left, right) {
+  try {
+    return new URL(left).origin === new URL(right).origin;
+  } catch {
+    return false;
+  }
 }
 
 function setBadge(tabId, verdict) {
@@ -65,6 +73,10 @@ api.webNavigation.onBeforeNavigate.addListener(async (details) => {
   if (isTabApproved(details.tabId)) return;
 
   const currentState = tabState.get(details.tabId);
+  // Preserve same-origin forms, uploads, logins, settings saves, and links
+  // after SafeYou has already checked the site.
+  if (currentState?.verdict !== "checking" &&
+      sameOrigin(currentState?.targetUrl, details.url)) return;
   if (currentState?.verdict === "checking" && currentState.targetUrl === details.url) return;
 
   tabState.set(details.tabId, {
@@ -97,6 +109,12 @@ async function handleMessage(message, sender) {
 
   if (message.type === "get-state") {
     return tabState.get(tabId) || null;
+  }
+
+  if (message.type === "approve-next-navigation") {
+    if (!Number.isInteger(tabId)) return { ok: false, error: "No browser tab is available" };
+    approveTab(tabId);
+    return { ok: true };
   }
 
   if (message.type === "navigate-approved") {

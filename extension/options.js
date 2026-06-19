@@ -1,7 +1,7 @@
 const input = document.querySelector("#api");
 const message = document.querySelector("#message");
 
-browser.storage.local.get({ apiBaseUrl: "http://localhost:3000" }).then((data) => {
+browser.storage.local.get({ apiBaseUrl: "https://safeyou.vercel.app" }).then((data) => {
   input.value = data.apiBaseUrl;
 });
 

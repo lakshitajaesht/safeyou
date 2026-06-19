@@ -35,8 +35,8 @@ your hosting setup permits it.
 1. Open `about:debugging#/runtime/this-firefox`.
 2. Select **Load Temporary Add-on**.
 3. Choose `extension/manifest.json`.
-4. Open the SafeYou settings and leave the backend URL as
-   `http://localhost:3000`.
+4. SafeYou defaults to `https://safeyou.vercel.app`. Change the backend URL to
+   `http://localhost:3000` only when developing locally.
 
 After deploying, change the setting to the Vercel project URL, such as
 `https://your-project.vercel.app`.
@@ -49,6 +49,9 @@ After deploying, change the setting to the Vercel project URL, such as
 4. Enable **Developer mode**.
 5. Select **Load unpacked** and choose the `extension-chrome` directory.
 6. Open SafeYou's backend settings and enter the local or deployed API URL.
+
+Published extension downloads are available from the
+[SafeYou Extension release](https://github.com/lakshitajaesht/safeyou/releases/tag/Extension).
 
 ## Deploy the API to Vercel
 

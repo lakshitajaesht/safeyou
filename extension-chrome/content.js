@@ -1,3 +1,7 @@
+document.addEventListener("submit", () => {
+  browser.runtime.sendMessage({ type: "approve-next-navigation" }).catch(() => {});
+}, true);
+
 browser.runtime.sendMessage({ type: "get-state" }).then((state) => {
   const currentUrl = new URL(location.href);
   currentUrl.hash = "";

@@ -17,6 +17,8 @@ input{width:100%;padding:12px 14px;border:1px solid #b9c5be;border-radius:10px;o
 input:focus{border-color:#176b45;box-shadow:0 0 0 3px #176b4520}
 .primary,.secondary{border:0;border-radius:9px;padding:11px 17px}
 .primary{background:#176b45;color:#fff}.secondary{background:#e8eeea;color:#24342b}
+.download-link{display:block;margin:20px 0 4px;padding:12px 15px;border-radius:10px;background:#e3f2e9;color:#145d3c;font-weight:800;text-align:center;text-decoration:none}
+.header-actions{display:flex;align-items:center;gap:9px}.action-link{display:inline-block;text-decoration:none}
 .login-card .primary{width:100%;margin-top:14px}
 .error{min-height:22px;color:#b42318;font-size:13px}
 .dashboard{min-height:100vh}
